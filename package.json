@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "react-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "client": "yarn workspace client start",
+    "client:build": "yarn workspace client build",
+    "server": "yarn workspace server start",
+    "server:dev": "yarn workspace server dev",
+    "start": "concurrently \"yarn server\" \"yarn client\" "
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
